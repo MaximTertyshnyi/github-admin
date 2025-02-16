@@ -1,0 +1,124 @@
+@use "../../variables.scss" as *;
+
+.Button {
+  -webkit-appearance: none;
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  height: 44px;
+  padding: 0 19px;
+  justify-content: center;
+  transition: 0.3s;
+  width: 100%;
+
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+
+  @media (--mobile) {
+    transition: 0;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.7;
+
+      @media (--mobile) {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__icon {
+    padding-right: 5px;
+    height: 24px;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &--L {
+    height: 48px;
+  }
+  /* end of sizes */
+
+  &--black {
+    background: var(--tone-800);
+    color: white;
+    border: 1px solid transparent;
+
+    @media (hover: hover) {
+      &:hover {
+        background: var(--black-hover);
+        opacity: 1;
+      }
+    }
+
+    &[disabled],
+    [disabled] & {
+      background: var(--tone-300);
+      color: var(--tone-400);
+    }
+  }
+
+  &--fit {
+    width: auto;
+    min-width: 200px;
+    padding: 0;
+    background: var(--tone-800);
+    color: white;
+    border: 1px solid transparent;
+
+    @media (--mobile) {
+      min-width: auto;
+    }
+  }
+
+  &--border {
+    width: 100%;
+    min-width: 200px;
+    padding: 0;
+    color: black;
+    border: 1px solid gray;
+
+    @media (--mobile) {
+      min-width: auto;
+    }
+  }
+
+  &--mini {
+    height: 40px;
+    width: 40px;
+    padding: 8px;
+    background-color: black;
+    color: white;
+
+    .Button__icon {
+      padding-right: 0;
+    }
+  }
+
+  &--touch {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 0;
+    transition: transform 0.2s ease;
+
+    .Button__icon {
+      padding-right: 0;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

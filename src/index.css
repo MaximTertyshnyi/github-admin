@@ -1,0 +1,45 @@
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-main);
+  line-height: 1.5;
+  color: #24292e;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  justify-items: center;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+
+  @media (--mobile) {
+    font-size: 18px;
+  }
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+a {
+  color: #0366d6;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+

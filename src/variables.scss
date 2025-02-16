@@ -1,0 +1,29 @@
+// Project design system
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+:root {
+  /* Design system colors */
+  --tone-300: rgba(0, 0, 0, 0.11);
+  --tone-400: rgba(0, 0, 0, 0.28);
+  --tone-600: rgba(0, 0, 0, 0.65);
+  --tone-800: rgba(0, 0, 0, 0.86);
+
+  --black-hover: #1f1f1fe3;
+
+  // Fonts
+  --font-family-main: Roboto;
+}
+
+/* Screen resolutions for adaptability */
+@custom-media --xl-desktop only screen and (min-width: 1600px);
+/* 1600 */
+@custom-media --x-desktop only screen and (min-width: 1300px);
+/* 1300 */
+@custom-media --desktop only screen and (min-width: 992px);
+/* 992 */
+@custom-media --small-desktop only screen and (max-width: 1100px);
+/* 992 */
+@custom-media --tablet only screen and (min-width: 768px) and (max-width: 991px);
+/* 768 */
+@custom-media --mobile only screen and (max-width: 767px);
+/* 320 */
+@custom-media --x-mobile only screen and (max-width: 480px);

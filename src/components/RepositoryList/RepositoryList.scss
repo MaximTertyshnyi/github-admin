@@ -1,0 +1,130 @@
+@use "../../variables.scss" as *;
+
+.RepositoryList {
+  width: 100%;
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__card {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    &_item {
+      margin-bottom: 8px;
+    }
+
+    &_actions {
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+    }
+  }
+
+  @media (--mobile) {
+    display: block;
+    width: 100%;
+
+    thead {
+      display: block;
+    }
+
+    tbody {
+      display: block;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    tr {
+      display: block;
+      padding: 10px 0;
+      border-radius: 8px;
+      background: white;
+    }
+
+    td {
+      display: block;
+      text-align: right;
+      position: relative;
+      padding: 8px 0;
+
+      &:before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--tone-600);
+        padding-right: 8px;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    align-items: center;
+    background-color: white;
+    z-index: 10;
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    @media (--mobile) {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 5px;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    position: relative;
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      font-weight: 500;
+      color: var(--tone-600);
+    }
+
+    thead {
+      position: sticky;
+      top: 65px;
+      background-color: white;
+      z-index: 5;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    th:last-child {
+      text-align: right;
+    }
+
+    tr {
+      border-bottom: 1px solid #e1e4e8;
+
+      &:hover {
+        background-color: #bbb8b849;
+      }
+    }
+
+    &_actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+  }
+}

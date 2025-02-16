@@ -1,0 +1,106 @@
+@use "../../variables.scss" as *;
+
+/* https://codepen.io/rbv912/pen/dYbqLQ */
+.Spinner {
+  --spinner-size: 1em;
+  --spinner-color: rgb(226 68 0);
+
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  height: var(--spinner-size);
+  width: var(--spinner-size);
+  animation: loader-2-1 3s linear infinite;
+
+  & span::after,
+  & span::before {
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: var(--spinner-size);
+    width: var(--spinner-size);
+    animation: loader-2-2 1.5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+  }
+
+  & span {
+    clip: rect(
+      calc(var(--spinner-size) / 2),
+      var(--spinner-size),
+      var(--spinner-size),
+      0
+    );
+  }
+
+  & span::before {
+    content: "";
+    border: 0.16em solid transparent;
+    border-top: 0.16em solid var(--spinner-color);
+    border-radius: 50%;
+    animation-name: loader-2-3;
+  }
+
+  & span::after {
+    content: "";
+    border: 0.26em solid var(--spinner-color);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: unset;
+  }
+
+  &--orange {
+    --spinner-color: rgb(226 68 0);
+  }
+
+  &--size-large {
+    --spinner-size: 52px;
+  }
+
+  &Overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffffc9;
+    z-index: 1;
+
+    .Spinner {
+      position: relative;
+    }
+  }
+}
+
+@keyframes loader-2-1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-2-2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-2-3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
